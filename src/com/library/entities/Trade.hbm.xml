@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-5 18:15:30 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.library.entities.Trade" table="TRADE">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="number" type="java.lang.String">
+            <column name="NUMBER" />
+        </property>
+        <many-to-one name="books" class="com.library.entities.Books" >
+            <column name="bookId" />
+        </many-to-one>
+        <property name="borrowDate" type="java.lang.String">
+            <column name="BORROWDATE" />
+        </property>
+        <property name="returnDate" type="java.lang.String">
+            <column name="RETURNDATE" />
+        </property>
+        <property name="trueDate" type="java.lang.String">
+            <column name="TRUEDATE" />
+        </property>
+        <property name="money" type="float">
+            <column name="MONEY" />
+        </property>
+        <property name="count" type="int">
+           <column name="COUNT"></column>
+        </property>
+        <many-to-one name="user" class="com.library.entities.User" fetch="join">
+            <column name="userId" />
+        </many-to-one>
+        <property name="sendPhone" type="java.lang.String">
+            <column name="SENDPHONE" />
+        </property>
+        <property name="sendAddress" type="java.lang.String">
+           <column name="SENDADDRESS"></column>
+        </property> 
+         <property name="reMarks" type="java.lang.String">
+            <column name="REMARKS" />
+        </property> 
+        <property name="state" type="int">
+            <column name="STATE" />
+        </property> 
+         <property name="cheap" type="int">
+            <column name="CHEAP" />
+        </property> 
+    </class>
+</hibernate-mapping>

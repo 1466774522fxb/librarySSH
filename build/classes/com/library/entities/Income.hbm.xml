@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-11 9:12:48 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.library.entities.Income" table="INCOME">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="borrowId" type="java.lang.String">
+            <column name="BORROWID" />
+        </property>
+        <property name="bookMoney" type="float">
+            <column name="BOOKMONEY" />
+        </property>
+        <property name="ticketMoney" type="float">
+            <column name="TICKETMONEY" />
+        </property>
+        <property name="createtime" type="java.lang.String">
+            <column name="CREATETIME" />
+        </property>
+        <property name="returnMoney" type="float">
+        	<column name="RETURNMONEY"></column>
+        </property>
+    </class>
+</hibernate-mapping>

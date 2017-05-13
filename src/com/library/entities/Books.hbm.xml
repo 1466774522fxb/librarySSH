@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-5 18:15:30 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.library.entities.Books" table="BOOKS">
+        <id name="ISBN" type="java.lang.String">
+            <column name="ISBN" />
+        </id>
+        <property name="bookName" type="java.lang.String">
+            <column name="BOOKNAME" />
+        </property>
+        <property name="author" type="java.lang.String">
+            <column name="AUTHOR" />
+        </property>
+        <property name="publish" type="java.lang.String">
+            <column name="PUBLISH" />
+        </property>
+        <many-to-one name="type" class="com.library.entities.Type" >
+            <column name="classId" />
+        </many-to-one>
+        <property name="createTime" type="java.lang.String">
+            <column name="CREATETIME" />
+        </property>
+        <property name="counts" type="int">
+            <column name="COUNTS" />
+        </property>
+        <property name="loanCount" type="int">
+            <column name="LOANCOUNT" />
+        </property>
+        <property name="summary" type="java.lang.String">
+            <column name="SUMMARY" />
+        </property>
+        <property name="status" type="int">
+            <column name="STATUS" />
+        </property>
+        <property name="bookImg" type="java.lang.String">
+            <column name="BOOKIMG"/>
+        </property>
+         <property name="isCheap" type="int">
+            <column name="ISCHEAP"/>
+        </property>
+    </class>
+</hibernate-mapping>

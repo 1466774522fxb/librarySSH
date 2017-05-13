@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-5 18:15:30 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.library.entities.User" table="USER">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="balance" type="float">
+            <column name="BALANCE" />
+        </property>
+        <property name="grade" type="int">
+            <column name="GRADE" />
+        </property>
+        <property name="type" type="int">
+            <column name="TYPE" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+         <property name="status" type="int">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

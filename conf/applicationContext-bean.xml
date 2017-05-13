@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="userDao" class="com.library.dao.UserDao">
+         <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean> 
+    <bean id="userService" class="com.library.service.UserService">
+         <property name="userDao" ref="userDao"></property>
+    </bean>
+    <bean id="userAction" class="com.library.actions.UserAction" scope="prototype">
+         <property name="userService" ref="userService"></property>
+    </bean> 
+   
+    <bean id="booksDao" class="com.library.dao.BooksDao">
+         <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="booksService" class="com.library.service.BooksService">
+         <property name="booksDao" ref="booksDao"></property>
+    </bean>
+    <bean id="booksAction" class="com.library.actions.BooksAction" scope="prototype">
+         <property name="typeService" ref="typeService"></property>
+         <property name="booksService" ref="booksService"></property>
+         <property name="userService"  ref="userService"></property>
+    </bean>
+   
+    <bean id="tradeDao" class="com.library.dao.TradeDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="incomeDao" class="com.library.dao.IncomeDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="tradeService" class="com.library.service.TradeService">
+        <property name="userDao" ref="userDao"></property>
+         <property name="tradeDao" ref="tradeDao"></property>
+    	<property name="incomeDao" ref="incomeDao"></property>
+    </bean>
+     <bean id="tradeAction" class="com.library.actions.TradeAction" scope="prototype">
+         <property name="tradeService" ref="tradeService"></property>
+    	<property name="booksService" ref="booksService"></property>
+   	 </bean> 
+    
+     <bean id="typeDao" class="com.library.dao.TypeDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="typeService" class="com.library.service.TypeService">
+         <property name="typeDao" ref="typeDao"></property>
+    </bean>
+     <bean id="typeAction" class="com.library.actions.TypeAction" scope="prototype">
+         <property name="typeService" ref="typeService"></property>
+    </bean> 
+</beans>
